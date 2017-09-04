@@ -1,0 +1,8 @@
+.navbar {
+  margin-bottom: 0;
+  transition: height 100px;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+}
