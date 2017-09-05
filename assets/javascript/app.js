@@ -5,44 +5,47 @@ $(document).ready(function() {
   jumbo
     .css("font-family", "lora")
     .hide()
-    .html("the Trivia <i>Game</i>")
-    .slideDown(3000,function(){
+    .html("the Tri<font color='red'>v</font>ia <i>Game</i>")
+    .slideDown(3000, function() {
       intro = $(".jumbotron p")
       // intro.hide();
       intro.fadeIn(5000);
-      });
+    });
   //navbar code
   navbar = $(".navbar");
   navbar.hide();
-  navbar.animate({width:'toggle'},4000);
+  navbar.animate({
+    width: 'toggle'
+  }, 4000);
 
 });
 // Location of all eventhandlers
-$("#start-game").on("click",startgame)
+$("#start-game").on("click", startgame)
 
 // creating a general purpose timer
 timer = {
-  timerID:"",
-  start:function(task,seconds) {
-    if(!timerID){
-      timerID = setTimeout(task,seconds)//may use setInterval depending on code
+  timerID: "",
+  start: function(task, seconds) {
+    if (!timerID) {
+      timerID = setTimeout(task, seconds) //may use setInterval depending on code
     }
   },
-  stop:function(){
+  stop: function() {
     clearTimeout(this.timerID);
     this.timerID = "";
   }
 }
 questions = [
-  ["What is the keyword for creating a timer?",
-  ["setTimeout","set-Timeout","set Timeout", 'WutTimeisIt?'],
-  "setTimeout"],
-  ["When does $(document).ready(function() run in respect to the page loading?",
-  ["Before","During","After","7:30am"],
-  "After"],
+  ["What is the keyword for creating a timer?", ["setTimeout", "set-Timeout", "set Timeout", 'WutTimeisIt?'],
+    "setTimeout"
+  ],
+  ["When does $(document).ready(function() run in respect to the page loading?", ["Before", "During", "After", "7:30am"],
+    "After"
+  ],
   ["What does this code select "]
 ]
-function startgame(){
+
+function startgame() {
   console.log(this)
 
 }
