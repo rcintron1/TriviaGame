@@ -35,15 +35,7 @@ timer = {
     this.timerID = "";
   }
 }
-questions = [
-  {"question":"What is the keyword for creating a timer?",
-   "options":["setTimeout", "set-Timeout", "set Timeout", "WutTimeisIt"],
-    "answer":"setTimeout"},
-  {"question":"When does $(document).ready(function() run in respect to the page loading?",
-   "options":["Before", "During", "After", "7:30am"],
-    "answer":"After"},
-  {"What does this code select "}
-]
+
 
 function startgame() {
   console.log(this)
