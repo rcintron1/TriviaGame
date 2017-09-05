@@ -36,13 +36,13 @@ timer = {
   }
 }
 questions = [
-  ["What is the keyword for creating a timer?", ["setTimeout", "set-Timeout", "set Timeout", 'WutTimeisIt?'],
-    "setTimeout"
-  ],
-  ["When does $(document).ready(function() run in respect to the page loading?", ["Before", "During", "After", "7:30am"],
-    "After"
-  ],
-  ["What does this code select "]
+  {"question":"What is the keyword for creating a timer?",
+   "options":["setTimeout", "set-Timeout", "set Timeout", "WutTimeisIt"],
+    "answer":"setTimeout"},
+  {"question":"When does $(document).ready(function() run in respect to the page loading?",
+   "options":["Before", "During", "After", "7:30am"],
+    "answer":"After"},
+  {"What does this code select "}
 ]
 
 function startgame() {
