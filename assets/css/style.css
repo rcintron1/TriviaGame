@@ -6,3 +6,16 @@
 .jumbotron {
   margin-bottom: 0;
 }
+.questions{
+  width: 500px;
+  height: 500px;
+  margin-top: 15px;
+  background-color: #bcc;
+  padding: 15px;
+}
+h2{
+  color:white;
+}
+h3{
+  color:#07b;
+}
