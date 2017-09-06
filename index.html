@@ -17,12 +17,15 @@
   </div>
 
   <nav class="navbar navbar-default" hidden>
-    <p class="navbar-text">Click here to start a new game</p>
-    <button type="button" class="btn btn-default navbar-btn" id="start-game">
+    <p class="navbar-text navbar-left">Click here to start a new game</p>
+    <button type="button" class="btn btn-default navbar-btn navbar-left" id="start-game">
       <span class="glyphicon glyphicon-star"></span>
         Here
       <span class="glyphicon glyphicon-star"></span>
-    </button>
+      </button>
+          <p class="navbar-text navbar-center">Correct =<span id="correct"></span></p>
+          <p class="navbar-text navbar-center">Incorrect =<span id="incorrect"></span></p>
+          <p class="navbar-text navbar-center">Timed out =<span id="timedOut"></span></p>
   </nav>
 
   <div class="questions" hidden>

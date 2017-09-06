@@ -23,8 +23,9 @@ $(document).ready(function() {
 trivia = {
   questionNum: "",
   timerID: "",
+  seconds: 7000, //how many seconds per question
   textAnswer: "",
-  answered: 0,
+  timedOut: 0,
   correct: 0,
   incorrect: 0,
   div: $(".questions"),
@@ -42,11 +43,11 @@ trivia = {
       trivia.questionNum = 0;
       trivia.loadQuestion(questions[trivia.questionNum]);
       trivia.questionNum++;
-      trivia.startTimer(trivia.answer, 5000);
+      trivia.startTimer(trivia.answer, trivia.seconds);
     } else if (trivia.questionNum < questions.length) {
       trivia.loadQuestion(questions[trivia.questionNum]);
       trivia.questionNum++;
-      trivia.startTimer(trivia.answer, 5000);
+      trivia.startTimer(trivia.answer, trivia.seconds);
     } else {
       console.log("No More Questions")
     }
@@ -66,13 +67,23 @@ trivia = {
     $(".option").on("click", trivia.answer);
   },
   answer: function() { //action taken when time runs out or li was clicked
-    console.log(this.innerHTML);
-    trivia.divToggle();
-    if (this.innerHTML === trivia.textAnswer) {
-      console.log("Got it right");
-    } else{
-      console.log("Got it wrong");
+    console.log(this);
+    if (this.className=== "option") {
+      clearTimeout(trivia.timerID)
+      if (this.innerHTML === trivia.textAnswer) {
+        console.log("Got it right");
+        trivia.correct++;
+      } else {
+        console.log("Got it wrong");
+        trivia.incorrect++;
+      }
+    }else{
+      trivia.timedOut++;
     }
+    trivia.divToggle();
+    $("#correct").html(trivia.correct);
+    $("#incorrect").html(trivia.incorrect);
+    $("#timedOut").html(trivia.timedOut);
     trivia.timerID = "";
     trivia.ask();
   },
@@ -83,7 +94,7 @@ trivia = {
   }
 }
 
-$("#start-game").on("click", trivia.ask);
+$("#start-game").on("click", startgame);
 questions = [{
     "question": "What is bootstrap?",
     "options": ["a part of a boot", "a jquery library for formatting CSS", "a front-end framework"],
@@ -102,5 +113,12 @@ questions = [{
 ]
 
 function startgame() {
-  console.log(this)
+  trivia.questionNum = "";
+  trivia.timerID = "";
+  trivia.textAnswer = "";
+  trivia.answered = 0;
+  trivia.correct = 0;
+  trivia.incorrect = 0;
+  console.log(this);
+  trivia.ask();
 }
