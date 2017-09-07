@@ -119,6 +119,7 @@ function startgame() {
   trivia.answered = 0;
   trivia.correct = 0;
   trivia.incorrect = 0;
+  trivia.timedOut = 0;
   console.log(this);
   trivia.ask();
 }
