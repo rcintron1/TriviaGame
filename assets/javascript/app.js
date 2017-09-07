@@ -81,9 +81,7 @@ trivia = {
       trivia.timedOut++;
     }
     trivia.divToggle();
-    $("#correct").html(trivia.correct);
-    $("#incorrect").html(trivia.incorrect);
-    $("#timedOut").html(trivia.timedOut);
+    trivia.updateScore();
     trivia.timerID = "";
     trivia.ask();
   },
@@ -91,6 +89,11 @@ trivia = {
     this.div.animate({
       width: 'toggle'
     }, 500);
+  },
+  updateScore: function(){
+    $("#correct").html(trivia.correct);
+    $("#incorrect").html(trivia.incorrect);
+    $("#timedOut").html(trivia.timedOut);
   }
 }
 
@@ -120,6 +123,7 @@ function startgame() {
   trivia.correct = 0;
   trivia.incorrect = 0;
   trivia.timedOut = 0;
+  trivia.updateScore();
   console.log(this);
   trivia.ask();
 }
